@@ -67,7 +67,6 @@ def is_word_guessed(secret_word, letters_guessed):
         return False
     return True
 
-
 def get_guessed_word(secret_word, letters_guessed):
     '''
     secret_word: string, the word the user is guessing
@@ -75,9 +74,14 @@ def get_guessed_word(secret_word, letters_guessed):
     returns: string, comprised of letters, underscores (_), and spaces that represents
       which letters in secret_word have been guessed so far.
     '''
-    # FILL IN YOUR CODE HERE AND DELETE "pass"
-    pass
-
+    result = []
+    for i in secret_word:
+      if i in letters_guessed:
+        result.append(i)
+      else:
+        result.append('_ ')
+    result = ''.join(result)
+    return result
 
 
 def get_available_letters(letters_guessed):
@@ -86,8 +90,16 @@ def get_available_letters(letters_guessed):
     returns: string (of letters), comprised of letters that represents which letters have not
       yet been guessed.
     '''
-    # FILL IN YOUR CODE HERE AND DELETE "pass"
-    pass
+    result = []
+
+    for i in string.ascii_lowercase:
+      if i in letters_guessed:
+        next
+      else:
+        result.append(i)
+    
+    result = ''.join(result)
+    return result
     
     
 
@@ -214,3 +226,6 @@ if __name__ == "__main__":
     
     #secret_word = choose_word(wordlist)
     #hangman_with_hints(secret_word)
+
+letters_guessed = ['e', 'i', 'k', 'p', 'r', 's']
+print(get_available_letters(letters_guessed))
